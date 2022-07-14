@@ -11,22 +11,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.riyas.entriapp.adapters.paging.MoviePagingSource
 import com.riyas.entriapp.adapters.recyclerview.MovieRecyclerAdapter
 import com.riyas.entriapp.databinding.FragmentHomeBinding
-import com.riyas.entriapp.models.moviemodelapi.ResultMovie
-import com.riyas.entriapp.models.moviemodelroom.MovieModelRoom
-import com.riyas.entriapp.repository.MovieRoomRepository
-import com.riyas.entriapp.room.MovieDao
 import com.riyas.entriapp.viewmodel.HomeFragmentViewModel
-import com.riyas.entriapp.viewmodel.MovieRoomHomeFragmentViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class HomeFragment: Fragment() {
@@ -70,6 +60,8 @@ class HomeFragment: Fragment() {
        lifecycleScope.launch {
            mViewModel.listData.collect{pagingData->
                mAdapter.submitData(pagingData)
+
+
            }
        }
     }

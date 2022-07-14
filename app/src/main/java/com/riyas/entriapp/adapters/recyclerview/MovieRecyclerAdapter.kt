@@ -1,12 +1,7 @@
 package com.riyas.entriapp.adapters.recyclerview
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -14,14 +9,7 @@ import coil.load
 import com.riyas.entriapp.adapters.paging.MoviePagingSource
 import com.riyas.entriapp.databinding.MovieCardShowBinding
 import com.riyas.entriapp.models.moviemodelapi.ResultMovie
-import com.riyas.entriapp.models.moviemodelroom.MovieModelRoom
-import com.riyas.entriapp.repository.MovieRoomRepository
 import com.riyas.entriapp.util.Constants
-import com.riyas.entriapp.viewmodel.HomeFragmentViewModel
-import com.riyas.entriapp.viewmodel.MovieRoomHomeFragmentViewModel
-import com.riyas.entriapp.viewmodel.MovieRoomViewModelFactory
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class MovieRecyclerAdapter : PagingDataAdapter<ResultMovie, MovieRecyclerAdapter.MyViewHolder>(diffUtils) {
    private var pageNo=MoviePagingSource.pageRoom

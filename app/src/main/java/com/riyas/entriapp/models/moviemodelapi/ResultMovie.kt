@@ -1,9 +1,14 @@
 package com.riyas.entriapp.models.moviemodelapi
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "movietable")
 data class ResultMovie(
     val adult: Boolean,
     val backdrop_path: String,
     val genre_ids: List<Int>,
+    @PrimaryKey
     val id: Int,
     val original_language: String,
     val original_title: String,

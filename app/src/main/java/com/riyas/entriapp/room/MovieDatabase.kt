@@ -4,9 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.riyas.entriapp.models.moviemodelroom.MovieModelRoom
-
-@Database(entities = [MovieModelRoom::class], version = 1)
+import com.riyas.entriapp.models.moviemodelapi.ResultMovie
+@Database(entities = [ResultMovie::class], version = 1)
 abstract class MovieDatabase :RoomDatabase()  {
     abstract val movieDaoInMovieDb:MovieDao
 
